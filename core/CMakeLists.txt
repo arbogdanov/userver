@@ -104,10 +104,14 @@ if (USERVER_CONAN)
 
     find_package(concurrentqueue REQUIRED)
 else()
-    include(SetupCAres)
+    if (DEFINED GRPC_EXTERNAL_ENABLE)
+        message("Target c-ares added by external grpc")
+    else()
+        include(SetupCAres)
+    endif()
     include(SetupCURL)
     include(SetupCryptoPP)
-    find_package(libyamlcpp REQUIRED)
+    find_package(yaml-cpp REQUIRED)
     include(SetupFmt)
     include(SetupSpdlog)
     include(SetupCCTZ)
@@ -207,7 +211,7 @@ else()
       PUBLIC
         libyamlcpp
         fmt
-        c-ares::cares
+        ${CARES_LIBRARY}
         cctz
         userver-stacktrace
       PRIVATE
@@ -238,6 +242,9 @@ set(USERVER_PUBLIC_INCLUDE_DIRS
   ${CMAKE_CURRENT_SOURCE_DIR}/include
   ${CMAKE_CURRENT_SOURCE_DIR}/../shared/include
   ${USERVER_THIRD_PARTY_DIRS}/pfr/include
+  ${CMAKE_CURRENT_SOURCE_DIR}/src
+  ${CMAKE_CURRENT_SOURCE_DIR}/../grpc/src
+  ${CMAKE_CURRENT_SOURCE_DIR}/../uboost_coro/include
 )
 set(USERVER_GLIBC_INCLUDE_FIXES_DIR
   ${CMAKE_CURRENT_SOURCE_DIR}/libc_include_fixes
