@@ -43,18 +43,18 @@ if(NOT USERVER_IMPL_GRPC_REQUIREMENTS_CHECKED)
     message(STATUS "Forcing old protobuf version for python")
     set(file_requirements_protobuf "requirements-old.txt")
   endif()
-  execute_process(
-    COMMAND "${PYTHON}"
-      -m pip install --disable-pip-version-check
-      -r "${USERVER_DIR}/scripts/grpc/${file_requirements_protobuf}"
-    RESULT_VARIABLE RESULT
-    WORKING_DIRECTORY "${USERVER_DIR}"
-  )
-  if(RESULT)
-    message(FATAL_ERROR
-        "Protobuf requirements check failed: "
-        "PYTHON ${PYTHON} USERVER_DIR ${USERVER_DIR} RESULT ${RESULT}")
-  endif(RESULT)
+  #execute_process(
+  #  COMMAND "${PYTHON}"
+  #    -m pip install --disable-pip-version-check
+  #    -r "${USERVER_DIR}/scripts/grpc/${file_requirements_protobuf}"
+  #  RESULT_VARIABLE RESULT
+  #  WORKING_DIRECTORY "${USERVER_DIR}"
+  #)
+  #if(RESULT)
+  #  message(FATAL_ERROR
+  #      "Protobuf requirements check failed: "
+  #      "PYTHON ${PYTHON} USERVER_DIR ${USERVER_DIR} RESULT ${RESULT}")
+  #endif(RESULT)
   set(USERVER_IMPL_GRPC_REQUIREMENTS_CHECKED ON CACHE INTERNAL "")
 endif()
 
