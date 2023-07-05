@@ -37,7 +37,7 @@ if(NOT USERVER_GRPC_VERSIONS_PRINTED)
 endif()
 
 # We only check the system pip protobuf package version once.
-if(NOT USERVER_IMPL_GRPC_REQUIREMENTS_CHECKED)
+if(FALSE)
   set(file_requirements_protobuf "requirements.txt")
   if(Protobuf_VERSION VERSION_LESS 3.20.0)
     message(STATUS "Forcing old protobuf version for python")

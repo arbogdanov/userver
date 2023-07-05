@@ -96,6 +96,8 @@ endif(NOT HAS_CXX17_VARIANT)
 if(MACOS AND NOT USERVER_CONAN)
     set(Boost_NO_BOOST_CMAKE ON)
 endif()
+set(Boost_INCLUDE_DIR /home/artem_bogdanov/third_party/boost/include)
+set(Boost_LIBRARY_DIR /home/artem_bogdanov/third_party/boost/lib)
 find_package(Boost REQUIRED)
 
 add_cxx_compile_options_if_supported ("-ftemplate-backtrace-limit=0")

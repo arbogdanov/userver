@@ -117,6 +117,8 @@ if (USERVER_IS_THE_ROOT_PROJECT)
 endif()
 
 if (USERVER_CONAN)
+    set(Boost_INCLUDE_DIR /home/artem_bogdanov/third_party/boost/include)
+    set(Boost_LIBRARY_DIR /home/artem_bogdanov/third_party/boost/lib)
     find_package(Boost COMPONENTS stacktrace REQUIRED)
 else()
     add_subdirectory("${USERVER_THIRD_PARTY_DIRS}/boost_stacktrace")

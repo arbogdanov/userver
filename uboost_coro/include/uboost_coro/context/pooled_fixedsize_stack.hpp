@@ -7,6 +7,10 @@
 #ifndef BOOST_CONTEXT_POOLED_pooled_fixedsize_H
 #define BOOST_CONTEXT_POOLED_pooled_fixedsize_H
 
+#ifndef BOOST_USE_VALGRIND
+#define BOOST_USE_VALGRIND
+#endif
+
 #include <atomic>
 #include <cstddef>
 #include <cstdlib>

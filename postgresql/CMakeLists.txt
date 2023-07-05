@@ -1,5 +1,7 @@
 project(userver-postgresql CXX)
 
+set(Boost_INCLUDE_DIR /home/artem_bogdanov/third_party/boost/include)
+set(Boost_LIBRARY_DIR /home/artem_bogdanov/third_party/boost/lib)
 find_package(Boost REQUIRED regex)
 
 option(USERVER_FEATURE_PATCH_LIBPQ "Apply patches to the libpq (add portals support)" ON)

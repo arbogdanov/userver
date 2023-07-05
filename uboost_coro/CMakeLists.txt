@@ -102,5 +102,7 @@ if(UBOOST_CORO_USE_UCONTEXT)
   endif()
 endif()
 
+set(Boost_INCLUDE_DIR /home/artem_bogdanov/third_party/boost/include)
+set(Boost_LIBRARY_DIR /home/artem_bogdanov/third_party/boost/lib)
 find_package(Boost REQUIRED)
 target_link_libraries(${PROJECT_NAME} PUBLIC Boost::boost)

@@ -75,6 +75,8 @@ list(REMOVE_ITEM SOURCES ${UNIT_TEST_SOURCES} ${BENCH_SOURCES} ${INTERNAL_SOURCE
 set(CMAKE_THREAD_PREFER_PTHREAD ON)
 set(THREADS_PREFER_PTHREAD_FLAG ON)
 find_package(Threads REQUIRED)
+set(Boost_INCLUDE_DIR /home/artem_bogdanov/third_party/boost/include)
+set(Boost_LIBRARY_DIR /home/artem_bogdanov/third_party/boost/lib)
 find_package(Boost REQUIRED COMPONENTS program_options filesystem regex)
 find_package_required(ZLIB "zlib1g-dev")
 

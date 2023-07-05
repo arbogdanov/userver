@@ -1,6 +1,8 @@
 project(userver-stacktrace)
 include(CheckIncludeFile)
 
+set(Boost_INCLUDE_DIR /home/artem_bogdanov/third_party/boost/include)
+set(Boost_LIBRARY_DIR /home/artem_bogdanov/third_party/boost/lib)
 find_package(Boost REQUIRED) # Headers needed
 
 if(NOT MACOS AND "${CMAKE_SYSTEM}" MATCHES "BSD")

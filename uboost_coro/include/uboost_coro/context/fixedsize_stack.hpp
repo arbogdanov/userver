@@ -7,6 +7,10 @@
 #ifndef BOOST_CONTEXT_FIXEDSIZE_H
 #define BOOST_CONTEXT_FIXEDSIZE_H
 
+#ifndef BOOST_USE_VALGRIND
+#define BOOST_USE_VALGRIND
+#endif
+
 #include <cstddef>
 #include <cstdlib>
 #include <new>

@@ -7,6 +7,10 @@
 #ifndef BOOST_CONTEXT_PROTECTED_FIXEDSIZE_H
 #define BOOST_CONTEXT_PROTECTED_FIXEDSIZE_H
 
+#ifndef BOOST_USE_VALGRIND
+#define BOOST_USE_VALGRIND
+#endif
+
 extern "C" {
 #include <fcntl.h>
 #include <sys/mman.h>
